@@ -12,6 +12,7 @@ else
     echo "venv already installed"
 fi
 
+cd ~/PycharmProjects
 python3 -m venv dj_pj      #create the virtual environment named dj_pj, django project
 
 cd dj_pj
