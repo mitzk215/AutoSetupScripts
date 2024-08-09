@@ -14,10 +14,7 @@ usage: echo "alias clear='clear-x'" >> ~/.bashrc
  echo 'mkfile() { mkdir -p "$(dirname "$1")" && touch "$1" ;  }' >> ~/.bashrc     # -p option will create 
 										  # any parent directory also if they don't exist
 								# dirname - this command fetches the directory name from the whole string.
- 
  source ~/.bashrc
-
-
  Example:  mkfile ./fldr1/fldr2/file.txt
 
 
@@ -31,20 +28,19 @@ else
 	if (which buckle); then
 		echo "Buckle installed but not running";
 		echo "Initiating Buckle";
-		buckle -f & ;
+		(buckle -f &) && echo "Running Buckle" ;
 	else 
 		echo "Installing and Running Buckle"
 		sudo add-apt-repository universe -y ;
 		sudo apt install bucklespring ;
-		buckle -f & && echo "Running buckle";
+		(buckle -f &) && echo "Running buckle" ;
 	fi
 fi
 
 
-#rerun buckle (in case it malfunctions and keyboard sound is not working)
-
+###rerun buckle (in case it malfunctions and keyboard sound is not working)
 rerun_buckle() { sudo kill -9 $(pgrep buckle); (buckle -f &) && echo 'Running Buckle' ; }
-Usage: echo "rerun_buckle() { sudo kill -9 $(pgrep buckle); (buckle -f &) && echo 'Running Buckle' ; }" >> ~/.bashrc
+	Usage: echo "rerun_buckle() { sudo kill -9 $(pgrep buckle); (buckle -f &) && echo 'Running Buckle' ; }" >> ~/.bashrc
 
 
 #### Install GitHub Desktop on Ubuntu 22.04 =======
