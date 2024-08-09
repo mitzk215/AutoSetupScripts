@@ -20,7 +20,7 @@ usage: echo "alias clear='clear-x'" >> ~/.bashrc
 
 
 # Bucklespring - keyboard sound installation
-
+## NOTE: To get the PID of the process I am using the "pgrep" command. There are other methods to get this but I am using this simple command.
 if (pgrep buckle); then 
 	echo "Buckle installed and Running. PID = $(pgrep buckle)";
 

@@ -1,0 +1,13 @@
+
+
+
+
+
+## How to see help page for set command ?
+=> "help set" command, to the rescue.
+
+
+
+
+## How to easily find out the process id of any named process ? Not using any grep or awk ?
+=> "pgrep" command saves your day !
