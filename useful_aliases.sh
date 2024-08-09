@@ -30,18 +30,33 @@ if (pgrep buckle); then
 else
 	if (which buckle); then
 		echo "Buckle installed but not running";
+		echo "Initiating Buckle";
+		buckle -f & ;
 	else 
+		echo "Installing and Running Buckle"
 		sudo add-apt-repository universe -y ;
 		sudo apt install bucklespring ;
-		buckle -f & ;
+		buckle -f & && echo "Running buckle";
 	fi
 fi
 
 
 #rerun buckle (in case it malfunctions and keyboard sound is not working)
 
-rerun_buckle() { sudo kill -9 $(pgrep buckle); buckle -f & }
-Usage: echo "rerun_buckle() { sudo kill -9 $(pgrep buckle); buckle -f & }" >> ~/.bashrc
+rerun_buckle() { sudo kill -9 $(pgrep buckle); (buckle -f &) && echo 'Running Buckle' ; }
+Usage: echo "rerun_buckle() { sudo kill -9 $(pgrep buckle); (buckle -f &) && echo 'Running Buckle' ; }" >> ~/.bashrc
+
+
+#### Install GitHub Desktop on Ubuntu 22.04 =======
+## Source: https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+## Install Github Desktop for Ubuntu
+sudo apt update && sudo apt install github-desktop
+
+
+
+
 
 
 
