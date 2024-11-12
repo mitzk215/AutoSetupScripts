@@ -11,3 +11,15 @@
 
 ## How to easily find out the process id of any named process ? Not using any grep or awk ?
 => "pgrep" command saves your day !
+
+
+## Show exit code of last command in Bash prompt if it returned error
+    Source: https://unix.stackexchange.com/questions/653413/show-exit-code-of-last-command-in-bash-prompt-if-it-returned-error?noredirect=1&lq=1
+  Soln: 
+    PS1_PROMPT() {
+    local e=$?
+    #(( e )) && printf "$e|" # BW
+    (( e )) && printf "\033[01;31m$e\033[00m|"  # color
+    return $e
+    }
+    PS1='$(PS1_PROMPT)'"$PS1"
