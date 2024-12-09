@@ -52,15 +52,11 @@ dpkg-query -W -f='${Installed-Size;8}  ${Package}\n' | sort -n | grep  wallpaper
 
 dpkg-query -W -f='${Installed-Size;8}  ${Package}\n' | sort -n | grep -e language-pack- | grep -v language-pack.*-en.* | awk '{print $2}' | xargs sudo apt purge -y &&
 
+dpkg-query -W -f='${Installed-Size;8}  ${Package}\n' | sort -n | grep libreoffice | awk '{print $2}' | xargs sudo apt purge -y &&
+
 ## adding few more packages which are not used & big in size :
 echo "fonts-noto-cjk
-libreoffice-core
-libreoffice-common
-libreoffice-writer
-libreoffice-calc
 mythes-de-ch
-libreoffice-help-en-gb
-libreoffice-help-en-us
 mythes-en-us
 mythes-en-au
 fonts-arphic-uming
