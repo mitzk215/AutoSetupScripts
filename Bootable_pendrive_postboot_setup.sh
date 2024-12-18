@@ -64,7 +64,12 @@ mozc-server" | xargs sudo apt purge -y &&
 
 
 
+## REMOVE THESE APPLICATIONS FROM SOFTWARE CENTER
 
+Sudoku
+Mines
+Mahjongg
+AisleRiot Solitaire
 
 
 
