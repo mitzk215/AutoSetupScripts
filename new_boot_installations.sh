@@ -1,10 +1,10 @@
 
 
 #add universe repository to apt
-sudo add-apt-repository universe -y
+sudo add-apt-repository -y universe 
 
 #install apps 
-sudo apt install python3-venv bucklespring vim -y
+sudo apt install -y python3-venv bucklespring vim 
 
 #start buckle in the background
 buckle -f & 
@@ -19,6 +19,7 @@ buckle -f &
 
 # To view these .HEIC images on Ubuntu, do this...
 sudo apt update
-sudo apt install heif-gdk-pixbuf
-sudo apt install heif-thumbnailer
-sudo apt install libheif1:amd64
+sudo add-apt-repository -y universe
+sudo apt install -y heif-gdk-pixbuf heif-thumbnailer libheif1:amd64
+
+
