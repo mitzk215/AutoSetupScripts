@@ -23,3 +23,20 @@
     return $e
     }
     PS1='$(PS1_PROMPT)'"$PS1"
+
+Problem: man -k returns no results ?
+Troubleshooting:
+    Need to create the database. mandb -c should do it. Example below.
+    $ man -k foo
+    foo: nothing appropriate.
+    $ mandb -c
+    Processing manual pages under /usr/share/man...
+    ...
+    Checking for stray cats under /var/cache/man/local...
+    89 man subdirectories contained newer manual pages.
+    7168 manual pages were added.
+    0 stray cats were added.
+    $ man -k foo
+    ip-fou (8)           - Foo-over-UDP receive port configuration
+    $
+    Tips: (also check Manual page for mandb) 
