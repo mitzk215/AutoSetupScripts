@@ -23,3 +23,14 @@ sudo add-apt-repository -y universe
 sudo apt install -y heif-gdk-pixbuf heif-thumbnailer libheif1:amd64
 
 
+#Wireshark installation and use
+sudo apt install -y wireshark
+
+#Unable to use wireshark "couldn't run /usr/bin/dumpcap in child process"
+sudo dpkg-reconfigure wireshark-common
+#press the right arrow and enter for yes
+sudo chmod +x /usr/bin/dumpcap
+#done, restart wireshark
+
+
+
