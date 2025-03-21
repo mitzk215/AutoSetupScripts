@@ -32,5 +32,17 @@ sudo dpkg-reconfigure wireshark-common
 sudo chmod +x /usr/bin/dumpcap
 #done, restart wireshark
 
+snap refresh && snap refresh firefox --channel latest/stable
+sudo apt install gnome-screenshot
+# gnome-screenshot -f /home/ubuntu/Documents/Screenshots/gg.png
+
+
+
+
+
+
+
+
+
 
 
