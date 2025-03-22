@@ -22,7 +22,6 @@ sudo apt update
 sudo add-apt-repository -y universe
 sudo apt install -y heif-gdk-pixbuf heif-thumbnailer libheif1:amd64
 
-
 #Wireshark installation and use
 sudo apt install -y wireshark
 
@@ -34,7 +33,7 @@ sudo chmod +x /usr/bin/dumpcap
 
 snap refresh && snap refresh firefox --channel latest/stable
 sudo apt install gnome-screenshot
-# gnome-screenshot -f /home/ubuntu/Documents/Screenshots/gg.png
+# gnome-screenshot -d 5 -f /media/ubuntu/7A41-1405/SCREENSHOTS/To_Print/s1.png    ## d = delay in seconds
 
 
 
